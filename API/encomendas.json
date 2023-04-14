@@ -1,0 +1,30 @@
+[
+    {
+        "nome": "Bruce",
+        "produto": "Pano de Prato Bordado",
+        "quantidade": 5,
+        "unitario": 25,
+        "total": 0
+    },
+    {
+        "nome": "Selina",
+        "produto": "Pulseira Cristal - Rosa",
+        "quantidade": 2,
+        "unitario": 15,
+        "total": 0
+    },
+    {
+        "nome": "Harry",
+        "produto": "Pano de Prato Bordado",
+        "quantidade": 2,
+        "unitario": 25,
+        "total": 0
+    },
+    {
+        "nome": "Hermione",
+        "produto": "Jogo para Banheiro - Amarelo",
+        "quantidade": 1,
+        "unitario": 55,
+        "total": 0
+    }
+]
