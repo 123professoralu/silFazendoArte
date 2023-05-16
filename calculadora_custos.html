@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Sil Fazendo Arte</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudFlare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="menu">
+				<div id="nav" class="overLay">
+					<a href="JavaScript:void(0);" class="closeBtn" onClick="closeNav()">&times;</a>
+					<div class="overLay-content">
+						<a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+						<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Sobre</a>
+						<a href="index.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Encomendas</a>
+						<a href="calculadora_custos.html"><i class="fa fa-calculator" aria-hidden="true"></i> Calculadora de Custos</a>
+						<a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i> Contato</a>
+					</div>
+				</div>
+				<button class="nav-button" onclick="openNav()">
+					<i class="fa-solid fa-bars fa-2x"></i>
+				</button>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2 class="titulo">Calculadora de Custos</h2>
+				<!--Exibe os erros de validação do formulário-->
+				<ul id="mensagens-erro"></ul>
+				<form id="form-adiciona">
+					<div class="grupo">
+						<label for="nome">Nome do Produto</label>
+						<input id="nome" name="nome" type="text" placeholder="Digite o nome do produto" class="campo">
+					</div>
+					<div class="grupo">
+						<label for="lucro">% de lucro</label>
+						<input id="lucro" name="lucro" type="number" placeholder="Digite a margem de lucro" class="campo-peq">
+					</div>
+					<br>
+					<fieldset class="grupo-insumos">
+						<legend>Cadastro de Insumos</legend>
+						<div class="grupo">
+							<label for="nome_insumo">Nome do Insumo</label>
+							<input id="nome_insumo" name="nome_insumo" type="text" class="campo">
+						</div>
+						<div class="grupo-peq">
+							<label for="qtde_produto">Qtde do insumo para o produto</label>
+							<input id="qtde_produto" name="qtde_produto" type="text" class="campo-peq">
+						</div>
+						<div class="grupo-peq">
+							<label for="qtde_embcompra">Qtde na embalagem de compra</label>
+							<input id="qtde_embcompra" name="qtde_embcompra" type="text" class="campo-peq">
+						</div>
+						<div class="grupo-peq">
+							<label for="valor_insumo">Valor do insumo</label>
+							<input id="valor_insumo" name="valor_insumo" type="text" class="campo-peq">
+						</div>
+						<button id="adicionar-insumo" class="botao bto-principal">Inserir Insumo</button>
+						<div class="tabInsumos">
+							<table id="insumosProduto">
+								<thead>
+									<tr>
+										<th>Insumo</th>
+										<th>Qtde para o Produto</th>	
+										<th>Qtde na embalagem</th>
+										<th>Valor Insumo</th>
+										<th>Valor pro Produto</th>
+									</tr>
+								</thead>
+								<tbody id="tabela-insumos">
+									<!-- Tabela criada com o preenchimento do formulário -->
+								</tbody>
+								<tfoot id="total-insumos">
+									<tr>
+										<td colspan="4" class="calccustos">Total de Insumos:</td>
+										<td id="valor-total-insumos" class="calccustos"></td>
+									</tr>
+									<tr>
+										<td colspan="4" class="calccustos">Lucro:</td>
+										<td id="total-lucro" class="calccustos"></td>
+									</tr>
+									<tr>
+										<td colspan="4" class="calccustos">Você deve vender o produto por:</td>
+										<td id="total-venda-produto" class="calccustos calccustos-valfinal"></td>
+									</tr>
+								</tfoot>
+							</table>
+							<a href="JavaScript:ExportToExcel();"><img src="img/excel.png" class="img-excel"></a>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+
+		<script src="js/menu.js"></script>
+		<script src="js/insere-insumo.js"></script>
+		<script src="js/calculo-insumo.js"></script>
+	</body>
+</html>

@@ -34,7 +34,7 @@ botaoAdicionar.addEventListener("click", function(event){
     var encomenda = obtemEncomenda(form);
 
     //Monta a TR (Linha)
-    var encomendaTr = montaTr(encomenda);
+    //var encomendaTr = montaTr(encomenda);
 
     //Valida se os valores estão corretos para inserir na tabela
     var validacao=validaEncomenda(encomenda);
@@ -45,8 +45,11 @@ botaoAdicionar.addEventListener("click", function(event){
         return;
     }
     
-    var tabela = document.querySelector("#tabela-clientes");
-    tabela.appendChild(encomendaTr);
+    //var tabela = document.querySelector("#tabela-clientes");
+    //tabela.appendChild(encomendaTr);
+
+    //Chama a função que adiciona a encomenda na tabela
+    adicionaEncomendaNaTabela(encomenda);
 
     //Limpa o formulário
     form.reset();
@@ -148,4 +151,10 @@ function exibeMensagensErro(erros){
         li.textContent = erro;
         ul.appendChild(li);
     })
+}
+
+function adicionaEncomendaNaTabela(encomenda) {
+    var encomendaTr = montaTr(encomenda);
+    var tabela = document.querySelector("#tabela-clientes");
+    tabela.appendChild(encomendaTr);
 }

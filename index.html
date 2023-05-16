@@ -5,12 +5,29 @@
 		<title>Sil Fazendo Arte</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudFlare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	</head>
 	<body>
 
 		<header>
+			<div class="menu">
+				<div id="nav" class="overLay">
+					<a href="JavaScript:void(0);" class="closeBtn" onClick="closeNav()">&times;</a>
+					<div class="overLay-content">
+						<a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+						<a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Sobre</a>
+						<a href="index.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Encomendas</a>
+						<a href="calculadora_custos.html"><i class="fa fa-calculator" aria-hidden="true"></i> Calculadora de Custos</a>
+						<a href="#"><i class="fa fa-phone-square" aria-hidden="true"></i> Contato</a>
+					</div>
+				</div>
+				<button class="nav-button" onclick="openNav()">
+					<i class="fa-solid fa-bars fa-2x"></i>
+				</button>
+			</div>
 			<div class="container">
 				<img src="img/logo.png" class="logo">
+				<span id="climatempo"></span>
 			</div>
 		</header>
 		<main>
@@ -59,6 +76,8 @@
 						</tr>
 					</tbody>
 				</table>
+				<span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+				<button id="buscar-encomendas" class="botao bto-principal">Buscar Encomendas</button>
 			</section>
 		</main>
 
@@ -107,5 +126,7 @@
 		<script src="js/form.js"></script>
 		<script src="js/remover-encomenda.js"></script>
 		<script src="js/filtra.js"></script>
+		<script src="js/busca-encomenda.js"></script>
+		<script src="js/menu.js"></script>
 	</body>
 </html>
